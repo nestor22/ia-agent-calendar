@@ -1,0 +1,28 @@
+[project]
+name = "virtualasistant"
+version = "0.1.0"
+description = "virtualAsistant using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.148.0,<1.0.0",
+    "google-api-python-client>=2.176.0",
+    "google-auth>=2.40.3",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.2",
+    "python-dateutil>=2.9.0.post0",
+]
+
+[project.scripts]
+virtualasistant = "virtualasistant.main:run"
+run_crew = "virtualasistant.main:run"
+train = "virtualasistant.main:train"
+replay = "virtualasistant.main:replay"
+test = "virtualasistant.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

@@ -1,0 +1,40 @@
+research_events:
+  description: >
+    An investigation should be carried out on upcoming events that are related to 
+    topic {topic} and that can generate value for the organization and staff,
+    take into consideration that they must be close to the month of {month} and year {year}
+  expected_output: >
+   A list of upcoming events related to the {topic}, sorted by date, link, with details 
+   such as duration, location or virtual, cost or if it's free, and time spent.
+  agent: event_researcher
+
+reporting_task:
+  description: >
+    Review the context that was given and organize the events into possible events to 
+    attend by selecting only 10 of the most important events for the {topic}
+    Analyze the provided report and extract:
+    List of events/activities mentioned
+    Associated dates and times
+    Locations, if available
+    Relevant descriptions
+    Format the output as JSON with the following structure:
+    json:    
+    [
+        {
+            "title": "Event name",
+            "start_time": "2024-01-15T10:00:00",
+            "end_time": "2024-01-15T11:00:00",
+            "description": "Event description",
+            "location": "Location if available"
+        }
+    ].
+  expected_output: >
+    a file called Calendar in Json format with the events ca.
+  agent: event_manager
+
+create_the_calendar_events:
+  description: > 
+    Review agendas and assign report events without conflicting with the current agenda
+  expected_output: >
+    confirm the events assigned in the google calendar
+  agent: planner_agent
