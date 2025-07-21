@@ -36,7 +36,6 @@ class GoogleCalendarTool(BaseTool):
                # Parsear los datos de eventos
             events = json.loads(events_data)
             
-         
             service = get_calendar_service_with_api_key()
             
             created_events = []
