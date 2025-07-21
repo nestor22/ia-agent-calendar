@@ -22,7 +22,7 @@ planner_agent:
   role: >
     schedule staff events
   goal: >
-    Schedule report events that do not conflict with the current calendar
+    confirm the events was created on google calendar
   backstory: >
     You are an analyst who searches for and schedules events to avoid conflicts in the 
     staff agendas you review.

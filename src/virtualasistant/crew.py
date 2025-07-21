@@ -28,21 +28,19 @@ class Virtualasistant():
         return Agent(
             config=self.agents_config['event_researcher'], # type: ignore[index]
             tool=[SerperDevTool(), ScrapeWebsiteTool()],
-            verbose=False
         )
 
     @agent
     def event_manager(self) -> Agent:
         return Agent(
             config=self.agents_config['event_manager'], # type: ignore[index]
-            verbose=False
         )
-        
+
     @agent
     def planner_agent(self) -> Agent:
         return Agent(
             config=self.agents_config['planner_agent'], # type: ignore[index]
-            tool=[GoogleCalendarTool(),],
+            tool=[GoogleCalendarTool()],
             verbose=True
         )
 
@@ -65,7 +63,6 @@ class Virtualasistant():
     def create_the_calendar_events(self)-> Task:
         return Task(
             config=self.tasks_config['create_the_calendar_events'],
-            output_file='report.json',
         )
 
     @crew

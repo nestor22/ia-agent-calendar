@@ -55,7 +55,7 @@ class GoogleCalendarTool(BaseTool):
                 }
                 
                 created_event = service.events().insert(
-                    calendarId='primary', 
+                    calendarId='Tasks', 
                     body=event
                 ).execute()
                 
